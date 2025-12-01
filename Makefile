@@ -1,3 +1,5 @@
+export PATH := $(PATH):$(shell pwd)/stm32cube/bin
+
 install: build
     podman create --name temp_container localhost/org.cirelli.stm32cubeprogrammer
     podman cp temp_container:/app/stm32cube ./stm32cube
@@ -11,4 +13,4 @@ all: build
 
 .PHONY: run
 run:
-	podman run -it --rm localhost/org.cirelli.stm32cubeprogrammer /bin/bash
+	/opt/AppImages/arduinoIDE/arduino-ide_2.3.6_Linux_64bit.AppImage

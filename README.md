@@ -11,6 +11,9 @@
     ```
 * This seemed to work
 * I then updated my path to include the bin directory in the STM32Cube dir.
+    ```
+    export PATH="$PATH":$(pwd)/stm32cube/bin
+    ```
 * I did add some extra udev rules, I'm not sure if they helped but they were already there from other attempts
     /etc/udev/rules.d/99-stm32-udev.rules 
     ```
