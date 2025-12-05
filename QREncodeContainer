@@ -1,0 +1,8 @@
+FROM debian:latest
+
+WORKDIR /app
+
+RUN apt-get update && apt install -y qrencode && rm -rf /var/lib/apt/lists/*
+
+CMD ["--help"]
+ENTRYPOINT ["qrencode"]
