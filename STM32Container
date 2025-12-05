@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 WORKDIR /app
 
-COPY ./stm32cubeprg-lin-v2-21-0.zip stm32.zip
+COPY ./stm32cubeprg-lin.zip stm32.zip
 
 RUN apt-get update && apt install -y unzip && rm -rf /var/lib/apt/lists/* && \
     unzip stm32.zip && \
