@@ -26,7 +26,7 @@ void setup() {
 
   Serial.println(F("Init display..."));
   display.begin(THINKINK_TRICOLOR);
-  display.fillScreen(EPD_WHITE);
+  display.fillScreen(EPD_BLACK);
 
   Serial.println(F("Init QR..."));
   qrcode.setScale(4)                  //1 to 20
@@ -41,7 +41,7 @@ void setup() {
   //   text: content to encode
   //   x: horizontal position (upper left corner)
   //   y: vertical position (upper left corner)
-  if(!qrcode.draw("https://www.capitalone.com", 0, 0)) {
+  if(!qrcode.draw("https://www.capitalone.com", 15, 15)) {
     // Error generating QR code!
     // Possible causes:
     // - Text too long for selected version
