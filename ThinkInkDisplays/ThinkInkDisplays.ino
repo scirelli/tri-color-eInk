@@ -13,7 +13,7 @@
 
 // Comment out the next line to load from SPI/QSPI flash instead of SD card:
 #define USE_SD_CARD
-#define SD_CS       10  // SD card chip select
+#define SD_CS       13  // SD card chip select
 #define EPD_DC      6
 #define EPD_CS      5
 #define EPD_BUSY    12 // can set to -1 to not use a pin (will wait a fixed delay)
