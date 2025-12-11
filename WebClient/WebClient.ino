@@ -27,7 +27,7 @@ byte mac[] = { 0x98, 0x76, 0xB6, 0x13, 0x37, 0x0F };
 char server[] = "www.google.com";    // name address for Google (using DNS)
 
 // Set the static IP address to use if the DHCP fails to assign
-IPAddress ip(172, 16, 0, 177);
+IPAddress ip(172, 16, 0, 15);
 IPAddress myDns(9, 9, 9, 9);
 
 // Initialize the Ethernet client library
