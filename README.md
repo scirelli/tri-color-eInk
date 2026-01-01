@@ -34,6 +34,8 @@ See Notes for why
     make install-CubePrgr
     ```
 
+### Run Arduino IDE
+* Use the make command `run-arduino` so that the STM32 directory is added to your path and Arduiino IDE can find the programmer.
 
 ### Notes
 * Used a container to install the STM32CubeProgrammer then copied out the installed dir.
