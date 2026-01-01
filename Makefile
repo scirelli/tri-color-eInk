@@ -1,8 +1,9 @@
 export PATH := $(PATH):$(shell pwd)/stm32cube/bin
 export PATH := $(PATH):/opt/AppImages/ImageMagick
 
-.PHONY: install-CubePrgr
 install-CubePrgr: stm32cube
+	echo 'Installig Cube Programmer'
+	@touch install-CubePrgr
 
 stm32cube: build-CubePrgr
 	podman create --name temp_container localhost/org.cirelli.stm32cubeprogrammer
@@ -20,9 +21,14 @@ build-QREncode: .qrencoder
 	podman build -t org.cirelli.qrencode -f QREncodeContainer .
 	touch .qrencoder
 
+OS := $(shell uname -s)
 .PHONY: run-arduino
 run-arduino: install-CubePrgr
+ifeq ($(OS),Darwin)
+	open -a "Arduino IDE"
+else ifeq ($(OS),Linux)
 	/opt/AppImages/ArduinoIDE/arduino-ide.AppImage
+endif
 
 
 TYPE ?= PNG
