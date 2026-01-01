@@ -11,7 +11,7 @@ stm32cube: build-CubePrgr
 
 .PHONY: build-CubePrgr
 build-CubePrgr: stm32cubeprg-lin.zip
-	podman build -t org.cirelli.stm32cubeprogrammer -f STM32Container .
+	podman build --platform linux/amd64 -t org.cirelli.stm32cubeprogrammer -f STM32Container .
 
 .PHONY: build-QREncode
 build-QREncode: .qrencoder
