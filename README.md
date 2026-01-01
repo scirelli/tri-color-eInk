@@ -24,6 +24,7 @@
 * You must manually put the board into bootloader mode every time you want to upload. Do that by connecting the `B0` pin to 3.3V and clicking reset button.
 
 ##### Build/Install Cube Programmer
+See Notes for why
 * Download the cube programming [zip file](https://downloads.cirelli.org/files/stm32cubeprg-lin-v2-21-0.zip).
     ```
     wget -O stm32cubeprg-lin.zip https://downloads.cirelli.org/files/stm32cubeprg-lin-v2-21-0.zip
