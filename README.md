@@ -1,4 +1,37 @@
 # Tri-Color-Display
+[Project Source](https://github.com/scirelli/tri-color-eInk)
+
+## Setup
+
+### ArdruinoIDE
+* [Download](https://www.arduino.cc/en/software/)
+
+
+### STM32F405 Feather Express
+#### Board Setup
+* From the "File" menu select "Preferences", find the "Additional Board Manager URLs" text box. The box is comma seperated.
+* Add `https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json`
+* From the "Tools" menu, go down to "Board" submenu and select "Board Manager"
+* Search "STM32" and install.
+* Quit and restart the Arduino IDE
+
+* From the "Tools" menu, select "Generic STM32F4"
+* Then select "Board part number" -> "Adafruit Feather STM32F405"
+* Under "USB Support" select "CDC supercedes USART" so that Serial points to the USB port not the hardware serial
+* Select "STM32CubeProgrammer (DFU)" as the upload method
+
+##### Activate the Bootloader
+* You must manually put the board into bootloader mode every time you want to upload. Do that by connecting the `B0` pin to 3.3V and clicking reset button.
+
+##### Build/Install Cube Programmer
+* Download the cube programming [zip file](https://downloads.cirelli.org/files/stm32cubeprg-lin-v2-21-0.zip).
+    ```
+    wget -O stm32cubeprg-lin.zip https://downloads.cirelli.org/files/stm32cubeprg-lin-v2-21-0.zip
+    ```
+* Install it
+    ```
+    make install-CubePrgr
+    ```
 
 
 ### Notes
@@ -24,3 +57,7 @@
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="2341", GROUP="plugdev", MODE="0666"
     ```
 * I was not able to use the Flatpak Arduino for some reason. I think it had to do with my PATH. Even running from the same terminal did not work. I ended up using the AppImage.
+
+
+## References
+* [Adafruit STM32 Setup Guide](https://learn.adafruit.com/adafruit-stm32f405-feather-express/arduino-ide-setup)
