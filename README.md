@@ -24,7 +24,7 @@
 * You must manually put the board into bootloader mode every time you want to upload. Do that by connecting the `B0` pin to 3.3V and clicking reset button.
 
 ##### Build/Install Cube Programmer
-See Notes for why
+See Notes for why. This is Linux only. For Mac you will have to install teh STM32CubeProgrammer dmg.
 * Download the cube programming [zip file](https://downloads.cirelli.org/files/stm32cubeprg-lin-v2-21-0.zip).
     ```
     wget -O stm32cubeprg-lin.zip https://downloads.cirelli.org/files/stm32cubeprg-lin-v2-21-0.zip
@@ -36,6 +36,19 @@ See Notes for why
 
 ### Run Arduino IDE
 * Use the make command `run-arduino` so that the STM32 directory is added to your path and Arduiino IDE can find the programmer.
+
+### MacOS
+* There is some bugs in the mac programmer version. The shell script they use looks for the wrong file.
+* Go to `/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs`
+  ```
+  cd /Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs
+  ln -s STM32CubeProgrammer STM32_Programmer_CLI
+  mkdir bin
+  cd bin
+  ln -s /Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/STM32CubeProgrammer STM32_Programmer_CLI
+  ```
+* This names the file to what it's the script. The script with the bugs is `/Users/$USER/Library/Arduino15/packages/STMicroelectronics/tools/STM32Tools/2.4.0/stm32CubeProg.sh`
+
 
 ### Notes
 * Used a container to install the STM32CubeProgrammer then copied out the installed dir.
